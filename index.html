@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css"">
+</head>
+
+<body>
+  <div class=" header">
+
+  </div>
+  <div class="container">
+    <div class="title">
+      <h1>Hello World</h1>
+    </div>
+
+    <div class="main-content">
+      <a href="projectOne/" class="project-link">
+        <div class="project projectOne">
+          <h2>Project One: Portfolio</h2>
+          <p>Đây là mô tả ngắn gọn cho dự án 1.</p>
+        </div>
+      </a>
+      <a href="projectTwo/" class="project-link">
+        <div class="project projectTwo">
+          <h2>Project Two</h2>
+          <p>Đây là mô tả ngắn gọn cho dự án 2.</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+  </body>
+
+  <div class="bg-wrapper">
+    <div class="aurora a1"></div>
+    <div class="aurora a2"></div>
+    <div class="stars" id="stars"></div>
+  </div>
+
+  <script>
+    const starsContainer = document.getElementById('stars');
+    const count = 50; // Số lượng ngôi sao
+
+    for (let i = 0; i < count; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+
+      // Kích thước ngẫu nhiên từ 1px đến 3px
+      const size = Math.random() * 3 + 'px';
+      star.style.width = size;
+      star.style.height = size;
+
+      // Vị trí ngẫu nhiên
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+
+      // Thời gian nhấp nháy ngẫu nhiên để trông tự nhiên hơn
+      star.style.animationDelay = Math.random() * 2 + 's';
+
+      starsContainer.appendChild(star);
+    }
+  </script>
+
+</html>

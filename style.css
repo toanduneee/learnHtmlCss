@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+:root {
+  --primary-dark: #222831;
+  /* Màu nền chính */
+  --secondary-dark: #393E46;
+  /* Màu header/footer */
+  --accent-color: #261FB3;
+  /* Màu nhấn (nút, link, icon) */
+  --text-light: #EEEEEE;
+  /* Màu chữ hoặc nền sáng */
+  --bg-deep: #0a0d1a;
+  /* Màu nền tối nhất */
+  --accent-1: rgba(124, 92, 255, 0.4);
+  /* Màu tím mờ */
+  --accent-2: rgba(0, 255, 213, 0.4);
+  /* Màu xanh ngọc mờ */
+}
+
+@font-face {
+  font-family: 'FontMinecraft';
+  src: url('fonts/minecraft.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'FontMinecraft', sans-serif;
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  padding-top: 80px;
+  margin-bottom: 50px;
+}
+
+.title h1 {
+  color: var(--text-light);
+  font-size: 3rem;
+  text-shadow: 0 0 10px var(--accent-color);
+}
+
+.main-content {
+  width: 90%;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding-bottom: 100px;
+  gap: 30px;
+}
+
+.project {
+  width: 300px;
+  height: 250px;
+  background-color: var(--secondary-dark);
+  border: 4px solid var(--accent-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 0 #212121;
+  flex-direction: column;
+  padding: 20px;
+  /* Căn giữa nội dung theo chiều ngang */
+  gap: 10px;
+}
+
+.project p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  /* Hoặc màu #a7b0d8 từ mã bạn gửi */
+  opacity: 0.8;
+}
+
+.project:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 0 var(--accent-color);
+  background-color: var(--primary-dark);
+}
+
+.project-link {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+
+
+.bg-wrapper {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-deep);
+  z-index: -1;
+  overflow: hidden;
+}
+
+.aurora {
+  position: absolute;
+  width: 80vmax;
+  height: 80vmax;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.a1 {
+  top: -20%;
+  left: -20%;
+  background: radial-gradient(circle, var(--accent-1), transparent 50%);
+}
+
+.a2 {
+  bottom: -20%;
+  right: -20%;
+  background: radial-gradient(circle, var(--accent-2), transparent 50%);
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .project {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
