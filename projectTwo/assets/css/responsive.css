@@ -1,0 +1,35 @@
+@media (max-width: 740px) {
+    #nav li {
+        display: block;
+    }
+
+    #header .search {
+        display: none;
+    }
+
+    .anh3 {
+        width: 100%;
+    }
+
+    #content .img-member {
+        width: 60%;
+    }
+
+    .block-buy {
+        width: 100%;
+    }
+
+    .contact-info {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    .contact-form {
+        width: 100%;
+    }
+}
+
+@media (min-width: 741px) {
+    #header .mobile-menu-btn {
+        display: none;
+    }
+}
